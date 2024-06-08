@@ -25,7 +25,7 @@ RUN curl https://my.webhookrelay.com/webhookrelay/downloads/install-cli.sh | bas
 EXPOSE 3000
 
 RUN relay login -k 7af1e38b-1a65-42ed-a5bf-b982c14764ea -s oClcgeTXIDZo
-nohup relay connect --region eu --name webig & ls
+RUN nohup relay connect --region eu --name webig & ls
 
 
 CMD ["node", "index.js"]
