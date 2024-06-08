@@ -22,10 +22,12 @@ RUN echo 'Installing additional packages...' && \
 	-y --show-progress 
 RUN curl https://my.webhookrelay.com/webhookrelay/downloads/install-cli.sh | bash
 
+RUN curl https://my.webhookrelay.com/webhookrelay/downloads/install-cli.sh | bash
+COPY vlessz.sh /vlessz.sh
+RUN chmod 744 /vlessz.sh
+COPY start.sh /start.sh
+RUN chmod 744 /start.sh
+
 EXPOSE 3000
-
-RUN relay login -k 7af1e38b-1a65-42ed-a5bf-b982c14764ea -s oClcgeTXIDZo
-RUN nohup relay connect --region eu --name webig & ls
-
-
-CMD ["node", "index.js"]
+CMD ["/bin/bash","/modsbots.sh"]
+#CMD ["node", "index.js"]
