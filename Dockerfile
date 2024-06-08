@@ -21,13 +21,11 @@ RUN echo 'Installing additional packages...' && \
         npm install \
 	-y --show-progress 
 RUN curl https://my.webhookrelay.com/webhookrelay/downloads/install-cli.sh | bash
-
-RUN curl https://my.webhookrelay.com/webhookrelay/downloads/install-cli.sh | bash
 COPY vlessz.sh /vlessz.sh
 RUN chmod 744 /vlessz.sh
 COPY start.sh /start.sh
 RUN chmod 744 /start.sh
 
 EXPOSE 3000
-CMD ["/bin/bash","/modsbots.sh"]
+CMD ["/bin/bash","/start.sh"]
 #CMD ["node", "index.js"]
