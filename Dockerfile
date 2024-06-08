@@ -16,9 +16,9 @@ RUN echo 'Installing additional packages...' && \
 	apt-get install \
 	sudo \
 	wget \
-    unzip \
+        unzip \
 	screen \
-    npm install \
+        npm install \
 	-y --show-progress 
 RUN curl https://my.webhookrelay.com/webhookrelay/downloads/install-cli.sh | bash
 
